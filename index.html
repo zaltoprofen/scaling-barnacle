@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script type="text/javascript">
+      window.onload = function() {
+        const url = new URL(window.location.href);
+        const params = url.searchParams;
+        if (params.get("cname")) {
+          document.getElementById("cname").value = params.get("cname");
+          document.getElementById("form").submit();
+        }
+      };
+    </script>
+    <form id="form" method="post" action="https://www.jra.go.jp/JRADB/accessS.html">
+      <input id="cname" type="text" name="cname" value="" />
+      <input type="submit" value="Go" />
+    </form>
+  </body>
+</html>
